@@ -11,8 +11,8 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "debug": "^4.1.1",
-    "mqtt": "^3.0.0"
+    "debug": "4.1.1",
+    "mqtt": "3.0.0"
   },
   "scripts": {
     "start": "node ./index.js"

@@ -20,7 +20,7 @@ docker rm $SERVICE
 # Pull latest minor point version of MongoDB
 
 echo "pulling $SERVICE"
-docker pull matteocollina/$SERVICE
+docker pull eclipse-mosquitto
 
 # Now we run it!
 # Mosca/MQTT uses port 1883 as its standard port.
@@ -43,6 +43,6 @@ docker run \
   --restart always \
   -e TITLE=$SERVICE \
   --network chapter4 \
+  -v $PWD/mosquitto.conf:/mosquitto/config/mosquitto.conf \
   -v /var/db/mosca:/db \
-  matteocollina/mosca
-
+  eclipse-mosquitto

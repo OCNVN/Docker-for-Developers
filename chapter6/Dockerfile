@@ -1,4 +1,4 @@
-FROM alpine:20191114
+FROM alpine:20210804
 RUN apk update && \
     apk add nodejs npm
 RUN addgroup -S app && adduser -S -G app app

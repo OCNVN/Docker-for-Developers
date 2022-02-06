@@ -5,7 +5,7 @@
 # This is the name of the service.  It is used as the name of the running container, and is also passed
 # as the TITLE environment to the container.
 
-SERVICE=mosca
+SERVICE=eclipse-mosquitto
 
 # Stop any running MongoDB with our SERVICE name.  We're about to, maybe, download a newer image from Docker Hub.
 
@@ -20,7 +20,7 @@ docker rm $SERVICE
 # Pull latest minor point version of MongoDB
 
 echo "pulling $SERVICE"
-docker pull matteocollina/$SERVICE
+docker pull eclipse-mosquitto
 
 # Now we run it!
 # Mosca/MQTT uses port 1883 as its standard port.
@@ -33,7 +33,11 @@ docker run \
   --restart always \
   -e TITLE=$SERVICE \
   -p 1883:1883 \
-  -p 80:80 \
-  -v /tmp/mosca:/db \
-  matteocollina/mosca
+  -p 9001:9001 \
+  -v $PWD/mosquitto.conf:/mosquitto/config/mosquitto.conf \
+  eclipse-mosquitto
+  
+  # -v /tmp/mosca:/db \
+  
+  
 

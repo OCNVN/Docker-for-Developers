@@ -1,4 +1,4 @@
 #!/bin/sh
 
-docker push dockerfordevelopers/publisher
+docker push ocnvn/publisher
 

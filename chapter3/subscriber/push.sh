@@ -1,4 +1,4 @@
 #!/bin/sh
 
-docker push dockerfordevelopers/subscriber
+docker push ocnvn/subscriber
 

@@ -9,4 +9,4 @@
 ./stop.sh
 
 # fire up the container with shell (/bin/bash)
-docker run -it --rm --name publisher dockerfordevelopers/publisher /bin/bash
+docker run -it --rm --name publisher ocnvn/publisher /bin/bash

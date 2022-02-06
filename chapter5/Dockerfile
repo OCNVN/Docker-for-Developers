@@ -1,6 +1,6 @@
-FROM ubuntu:focal
+FROM ubuntu:jammy
 RUN apt-get -qq update && \
-    DEBIAN_FRONTEND=noninteractive apt-get -qq install -y nodejs npm > /dev/null
+    apt-get -qq install -y nodejs npm > /dev/null
 RUN mkdir -p /app/public /app/server
 COPY src/package.json* /app
 WORKDIR /app

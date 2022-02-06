@@ -10,9 +10,10 @@ services:
       - /tmp/mongo:/data/db
 
   mosca:
-    image: matteocollina/mosca
+    image: eclipse-mosquitto
     volumes:
       - /tmp/mosca:/db
+      - ${PWD}/mosquitto.conf:/mosquitto/config/mosquitto.conf
 
   publisher:
     build: publisher
